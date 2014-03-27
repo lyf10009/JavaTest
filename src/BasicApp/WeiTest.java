@@ -8,6 +8,12 @@ public class WeiTest {
 //        test();
 //        changeValues();
 //        findChessNum(5);
+        foo(1);
+    }
+    public static void foo(int i){
+        System.out.println(Integer.toBinaryString(i));
+        System.out.println(Integer.toBinaryString(-i));
+        System.out.println(i&(-i));
     }
     public static void findChessNum(int n) { 
         int num = 0; 

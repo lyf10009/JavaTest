@@ -3,6 +3,7 @@ package BasicApp;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,12 +19,15 @@ public class StringTest {
 //        replaceString();
 //        match();
 //        splitTest();
+        String string="ABCDEFGH";
+        char[] arr= string.toCharArray();
+        System.out.println(Arrays.toString(arr));
     }
     public static void splitTest(){
         String str1="123,1231";
         String str2="12313";
         String[] arr1=str1.split(",");
-        String[] arr2=str2.split(",");
+        String[] arr2=str2.split("");
         for(String he:arr1){
             System.out.println(he);
         }
