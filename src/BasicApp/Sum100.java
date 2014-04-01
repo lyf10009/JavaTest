@@ -21,7 +21,7 @@ public class Sum100 {
         }
     }
     
-    public Integer eval(String expr){//heh
+    public Integer eval(String expr){
         String[] numbers = expr.split("[+-]");//按"+-"划分
         String[] operators = expr.split("\\d+");//按数字划分
         operators = filter(operators);
@@ -53,5 +53,3 @@ public class Sum100 {
     }
 
 }
-
-
