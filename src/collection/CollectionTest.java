@@ -32,20 +32,22 @@ public class CollectionTest {
 //        listToSet();
 //        nullTest();
     }
-    public static void listToSet(){
-        List<Integer> list= new ArrayList<Integer>();
+
+    public static void listToSet() {
+        List<Integer> list = new ArrayList<Integer>();
         list.add(1);
         list.add(2);
         list.add(3);
         list.add(4);
         list.add(1);
-        Set<Integer> set=new HashSet<Integer>(list);
-        System.out.println(set.size()+"asdfdsf");
-        for(int i:set){
+        Set<Integer> set = new HashSet<Integer>(list);
+        System.out.println(set.size() + "asdfdsf");
+        for (int i : set) {
             System.out.println(i);
         }
     }
-    public static void setTest(){
+
+    public static void setTest() {
         List<Bus> list = new ArrayList<Bus>();
         Bus one1 = new Bus("bus1", "bus2", 1);
         Bus one2 = new Bus("bus1", "bus2", 2);
@@ -57,16 +59,17 @@ public class CollectionTest {
         list.add(one3);
         list.add(one4);
         list.add(one5);
-        Bus tmp=list.get(0);
+        Bus tmp = list.get(0);
         list.set(0, list.get(1));
         list.set(1, tmp);
-        for(Bus bus:list){
-            System.out.println(bus.getBus1()+"\t"+bus.getBus2()+"\t"+bus.getBus3());
+        for (Bus bus : list) {
+            System.out.println(bus.getBus1() + "\t" + bus.getBus2() + "\t" + bus.getBus3());
         }
     }
+
     //list中插入null的情况
-    public static void nullTest(){
-        List<Integer> list=new ArrayList<Integer>();
+    public static void nullTest() {
+        List<Integer> list = new ArrayList<Integer>();
         list.add(null);
         list.add(null);
         list.add(12);
@@ -74,65 +77,66 @@ public class CollectionTest {
         list.add(34);
         list.add(null);
         System.out.println(list.size());
-        for(int i=0;i<list.size();i++){
+        for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
     }
-    
-    public static void mapTest(){
+
+    public static void mapTest() {
         Bus one1 = new Bus("bus1", "bus21", 1);
         Bus one2 = new Bus("bus2", "bus22", 2);
         Bus one3 = new Bus("bus3", "bus23", 3);
-        Map<String,Bus> maps=new HashMap<String,Bus>();
-        maps.put("bus1",one1);
-        maps.put("bus2",one2);
-        maps.put("bus3",one3);
-        Map<String,Bus> newMap=new HashMap<String, Bus>();
+        Map<String, Bus> maps = new HashMap<String, Bus>();
+        maps.put("bus1", one1);
+        maps.put("bus2", one2);
+        maps.put("bus3", one3);
+        Map<String, Bus> newMap = new HashMap<String, Bus>();
         newMap.putAll(maps);
         maps.get("bus1").setBus3(4);
         //循环打印map中的值
         Iterator<String> it = maps.keySet().iterator();
-        while(it.hasNext()){
-            Bus tmp=maps.get(it.next());
-            System.out.println(tmp.getBus1()+"\t"+tmp.getBus2()+"\t"+tmp.getBus3());
+        while (it.hasNext()) {
+            Bus tmp = maps.get(it.next());
+            System.out.println(tmp.getBus1() + "\t" + tmp.getBus2() + "\t" + tmp.getBus3());
         }
         System.out.println("新map");
         Iterator<String> it1 = newMap.keySet().iterator();
-        while(it1.hasNext()){
-            Bus tmp=newMap.get(it1.next());
-            System.out.println(tmp.getBus1()+"\t"+tmp.getBus2()+"\t"+tmp.getBus3());
+        while (it1.hasNext()) {
+            Bus tmp = newMap.get(it1.next());
+            System.out.println(tmp.getBus1() + "\t" + tmp.getBus2() + "\t" + tmp.getBus3());
         }
-        
+
         //containsKey函数
-        if(maps.containsKey("bus6")) {
+        if (maps.containsKey("bus6")) {
             System.out.println("map中含有值为bus6的key");
-        }else {
+        } else {
             System.out.println("map中不含有值为bus6的key");
         }
-        
+
     }
-    public static void listToString(){
-        List<String> sl=new ArrayList<String>();
+
+    public static void listToString() {
+        List<String> sl = new ArrayList<String>();
         sl.add("a");
         sl.add("b");
         sl.add("c");
         StringBuffer buffer = new StringBuffer();
         buffer.append(sl);
         System.out.println(buffer.toString());
-        
+
     }
-    
-    public static void iteratorTest(){
-        List<String> sl=new ArrayList<String>();
+
+    public static void iteratorTest() {
+        List<String> sl = new ArrayList<String>();
         sl.add("a");
         sl.add("b");
         sl.add("c");
-        Iterator<String> iterator=sl.iterator();
-        while(iterator.hasNext()){
+        Iterator<String> iterator = sl.iterator();
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
     }
-    
+
     public static void clearList() {
         List<Bus> list = new ArrayList<Bus>();
         List<Bus> list1 = new ArrayList<Bus>();
@@ -232,14 +236,15 @@ public class CollectionTest {
             System.out.println(one.getBus1() + "\t" + one.getBus2() + "\t" + one.getBus3());
         }
     }
+
     //根据两个字段排序
     public static void sortList1() {
         List<Bus> list = new ArrayList<Bus>();
-        Bus one1 = new Bus("bus1",1, 1);
-        Bus one2 = new Bus("bus2",1, 4);
-        Bus one3 = new Bus("bus3",1, 1);
-        Bus one4 = new Bus("bus4",2, 4);
-        Bus one5 = new Bus("bus5",2, 5);
+        Bus one1 = new Bus("bus1", 1, 1);
+        Bus one2 = new Bus("bus2", 1, 4);
+        Bus one3 = new Bus("bus3", 1, 1);
+        Bus one4 = new Bus("bus4", 2, 4);
+        Bus one5 = new Bus("bus5", 2, 5);
         list.add(one1);
         list.add(one2);
         list.add(one3);
@@ -260,7 +265,8 @@ public class CollectionTest {
 //                }else{
 //                    return -1;
 //                }
-                return q1.getBus3()>q2.getBus3()?1:(q1.getBus3()==q2.getBus3()?(q1.getBus4()>q2.getBus4()?1:-1):-1);
+                return q1.getBus3() > q2.getBus3() ? 1 : (q1.getBus3() == q2.getBus3() ? (q1
+                        .getBus4() > q2.getBus4() ? 1 : -1) : -1);
             }
         });
         for (Bus one : list) {
@@ -312,7 +318,7 @@ public class CollectionTest {
         list1.add(one5);
         lista.add(list);
         lista.add(list1);
-        JSONArray a = JSONArray.fromObject(lista);  //将List转化成JSon字符数组
+        JSONArray a = JSONArray.fromObject(lista); //将List转化成JSon字符数组
         System.out.println(a.getJSONArray(0).getJSONObject(0).getInt("bus3"));
         System.out.println(a.getJSONArray(1).getJSONObject(1).getInt("bus3"));
     }

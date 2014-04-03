@@ -19,14 +19,15 @@ public class StringTest {
 //        replaceString();
 //        match();
 //        splitTest();
-        String string="ABCDEFGH";
-        char[] arr= string.toCharArray();
-        System.out.println(Arrays.toString(arr));
+        String string="2014-08-01";
+        String string1="2014-06-01";
+        System.out.println(string.indexOf("-08-"));
+        System.out.println(string1.indexOf("-08-"));
     }
     public static void splitTest(){
         String str1="123,1231";
         String str2="12313";
-        String[] arr1=str1.split(",");
+        String[] arr1=str1.split("=");
         String[] arr2=str2.split("");
         for(String he:arr1){
             System.out.println(he);
