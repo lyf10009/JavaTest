@@ -6,13 +6,14 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
-import java.util.Map.Entry;
+import java.util.TreeSet;
 
 import net.sf.json.JSONArray;
-import collection.Bus;
 
 public class CollectionTest {
     public static void main(String[] args) {
@@ -28,11 +29,23 @@ public class CollectionTest {
 //        retainAllTest();
 //        listToString();
 //        mapTest();
-//        setTest();
+//        listSetTest();
 //        listToSet();
 //        nullTest();
+//        queueTest();
+        setTest();
     }
-
+ 
+    public static void setTest() {
+        Set<Integer> set = new TreeSet<Integer>();
+        set.add(1);
+        set.add(2);
+        set.add(3);
+        set.add(4);
+        System.out.println("第一次："+set);
+        set.add(2);
+        System.out.println("第二次："+set);
+    }
     public static void listToSet() {
         List<Integer> list = new ArrayList<Integer>();
         list.add(1);
@@ -46,8 +59,18 @@ public class CollectionTest {
             System.out.println(i);
         }
     }
+    public static void queueTest() {
+        Queue<Integer> list = new LinkedList<Integer>();
+        list.offer(1);
+        list.offer(2);
+        list.offer(3);
+        list.offer(4);
+        while(!list.isEmpty()) {
+            System.out.println(list.poll());
+        }
+    }
 
-    public static void setTest() {
+    public static void listSetTest() {
         List<Bus> list = new ArrayList<Bus>();
         Bus one1 = new Bus("bus1", "bus2", 1);
         Bus one2 = new Bus("bus1", "bus2", 2);

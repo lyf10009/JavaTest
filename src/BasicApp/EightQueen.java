@@ -9,19 +9,18 @@ public class EightQueen {
     private int[] lup;
     // 解答
     private int[] queen;
-
     // 解答编号
     private int num;
-
+    private int n = 4;//N-Queens
     public EightQueen() {
-        column = new int[8 + 1];
-        rup = new int[2 * 8 + 1];
-        lup = new int[2 * 8 + 1];
+        column = new int[n + 1];
+        rup = new int[2 * n + 1];
+        lup = new int[2 * n + 1];
 
-        for (int i = 1; i <= 8; i++)
+        for (int i = 1; i <= n; i++)
             column[i] = 1;
 
-        for (int i = 1; i <= 2 * 8; i++){
+        for (int i = 1; i <= 2 * n; i++){
             rup[i] = lup[i] = 1;
         }
 
@@ -29,16 +28,16 @@ public class EightQueen {
     }
 
     public void backtrack(int i) {
-        if (i > 8) {
+        if (i > n) {
             showAnswer();
         } else {
-            for (int j = 1; j <= 8; j++) {
-                if (column[j] == 1 && rup[i + j] == 1 && lup[i - j + 8] == 1) {
+            for (int j = 1; j <= n; j++) {
+                if (column[j] == 1 && rup[i + j] == 1 && lup[i - j + n] == 1) {
                     queen[i] = j;
                     // 设定为占用
-                    column[j] = rup[i + j] = lup[i - j + 8] = 0;
+                    column[j] = rup[i + j] = lup[i - j + n] = 0;
                     backtrack(i + 1);
-                    column[j] = rup[i + j] = lup[i - j + 8] = 1;
+                    column[j] = rup[i + j] = lup[i - j + n] = 1;
                 }
             }
         }
@@ -47,8 +46,8 @@ public class EightQueen {
     protected void showAnswer() {
         num++;
         System.out.println("\n解答 " + num);
-        for (int y = 1; y <= 8; y++) {
-            for (int x = 1; x <= 8; x++) {
+        for (int y = 1; y <= n; y++) {
+            for (int x = 1; x <= n; x++) {
                 if (queen[y] == x) {
                     System.out.print(" Q");
                 } else {

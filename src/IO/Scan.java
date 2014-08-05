@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Scan {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner scanner=new Scanner(System.in);
 //		inputString(scanner);
 		inputInteger(scanner);

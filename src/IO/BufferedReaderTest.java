@@ -14,6 +14,7 @@ public class BufferedReaderTest{
                 } catch (NumberFormatException e) {
                     continue;
                 }
+                System.out.println(fileNum);
                 num += fileNum;
             }
             System.out.println(num);

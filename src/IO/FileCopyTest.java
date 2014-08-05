@@ -9,8 +9,7 @@ import java.io.InputStream;
 public class FileCopyTest {
 
     /**
-     * @param args
-     * @throws IOException 
+     * ÎÄ¼þ¸´ÖÆ
      */
     public static void main(String[] args) throws IOException {
         File file1= new File("E://EclipseWorkSpace//word.txt");

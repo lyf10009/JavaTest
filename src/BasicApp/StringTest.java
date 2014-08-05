@@ -15,15 +15,50 @@ public class StringTest {
 //        removeStr();
 //        timeFormatByString();
 //        substringTest();
-//        compareToStr();
+//        compareToTest();
 //        replaceString();
 //        match();
 //        splitTest();
-        String string="2014-08-01";
-        String string1="2014-06-01";
-        System.out.println(string.indexOf("-08-"));
-        System.out.println(string1.indexOf("-08-"));
+//        charTest();
+//        stringBuildTest();
+//        indexOf();
+        equals();
     }
+    public static void indexOf(){
+        String string = "2014-08-01";
+        String string1 = "2014-06-01";
+        System.out.println(string.indexOf("-08-"));
+        System.out.println(string1.indexOf("-08-"));//不存在时，返回-1
+    }
+
+    
+    /*
+     * ==比较的是对象的地址或者是引用，equals比较的是对象的内容
+     */
+    public static void equals(){
+        String a="2";
+        String b="2";
+        String c=new String("2");
+        System.out.println("a==b:"+a==b);
+        System.out.println("a.equals(b):"+a.equals(b));
+        System.out.println("a==c"+a==c);
+        System.out.println("a.equals(c):"+a.equals(c));
+    }
+    
+    public static void charTest(){
+        char a='1';
+        char b='2';
+        System.out.println(b++);
+        System.out.println(b-a);
+    }
+    public static void stringBuildTest(){
+        StringBuilder sb= new StringBuilder();
+        sb.append("1234").append("56789");
+        System.out.println(sb.toString());
+        sb.deleteCharAt(sb.length()-1);
+        System.out.println(sb.toString());
+    }
+    
     public static void splitTest(){
         String str1="123,1231";
         String str2="12313";
@@ -58,12 +93,12 @@ public class StringTest {
         System.out.println(str3);
     }
     public static void compareToTest(){
-        String str1 = "6001";
-        String str2 = "6002";
-        String str3 = "6001";
+        String str1 = "2014-04-15";
+        String str2 = "2014-05-13";
+        String str3 = "2014-06-12";
         System.out.println(str1.compareTo(str2));//-1
         System.out.println(str2.compareTo(str1));//1
-        System.out.println(str1.compareTo(str3));//0
+        System.out.println(str1.compareTo("2014-08-16"));//0
     }
     public static void charAtTest(){
         String str="0123456789";
@@ -72,8 +107,8 @@ public class StringTest {
     public static void substringTest(){
         String str="123456789";
         //substring(int index[,int toIndex]),index从0开始,默认到字符串末尾
-        System.out.println(str.substring(0, 7));
-        System.out.println(str.substring(3, str.length()-2));
+        System.out.println(str.substring(2, 2+1));
+        System.out.println(str.substring(str.length()-1, str.length()));
         System.out.println(str.substring(5));
         System.out.println(str.substring(7,8));
     }
@@ -88,14 +123,14 @@ public class StringTest {
         String str1="2013-4-01 17:30:42.0";
         String str11="2013-4-01 17:30:43.0";
         Date as1=new Date();
+        System.out.println(dfYear.format(as1));
         as1=dfAll.parse(str1);
         String str2="7:55";
-        System.out.println(as1.equals(dfAll.parse(str1)));
         System.out.println(dfYear.parse(dfYear.format(dfAll.parse(str1))));
         System.out.println(df.format(df1.parse(str2).getTime()));
         System.out.println(df1.format(df1.parse(str2).getTime()));
-        System.out.println(df1.format(df.parse(str1).getTime()));
-        System.out.println(df.format(df.parse(str1).getTime()));
+//        System.out.println(df1.format(df.parse(str1).getTime()));
+//        System.out.println(df.format(df.parse(str1).getTime()));
     }
     //判断汉字个数
     public static void judgeChinese(){

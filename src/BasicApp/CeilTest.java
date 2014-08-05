@@ -5,6 +5,11 @@ public class CeilTest {
     public static void main(String[] args) {
 //        ceil();
 //        quzheng();
+        
+        int i=0;
+        i=i++;
+        System.out.println(i);
+        
     }
     //È¡Õû ceil
     public static void ceil(){
