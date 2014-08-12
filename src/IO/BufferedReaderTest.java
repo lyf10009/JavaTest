@@ -3,21 +3,25 @@ package IO;
 import java.io.*;
 public class BufferedReaderTest{
     public static void main(String args[]){
+        readLineByLine("all.txt");
+        
+    }
+    
+    /**
+     * 按行读取文件中数据
+     * 然后打印每行数据
+     */
+    public static void readLineByLine(String fileName){
         BufferedReader in=null;
         try {
-            in = new BufferedReader(new FileReader("word.txt"));
+            in = new BufferedReader(new FileReader(fileName));
             String line;
-            int num = 0, fileNum;
+            int i=0;
             while ((line = in.readLine()) != null) {
-                try {
-                    fileNum = Integer.parseInt(line.trim());
-                } catch (NumberFormatException e) {
-                    continue;
-                }
-                System.out.println(fileNum);
-                num += fileNum;
+                System.out.println(line);
+                i++;
             }
-            System.out.println(num);
+            System.out.println("文件中一共有行"+i+"数据");
         } catch(IOException e) {
             e.printStackTrace();
         } finally{
