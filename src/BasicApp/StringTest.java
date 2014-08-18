@@ -14,7 +14,7 @@ public class StringTest {
 //        judgeChinese();//判断汉字个数
 //        removeStr();
 //        timeFormatByString();
-//        substringTest();
+        substringTest();
 //        compareToTest();
 //        replaceString();
 //        match();
@@ -107,6 +107,7 @@ public class StringTest {
     public static void substringTest(){
         String str="123456789";
         //substring(int index[,int toIndex]),index从0开始,默认到字符串末尾
+        System.out.println(str.substring(1,str.length()));
         System.out.println(str.substring(2, 2+1));
         System.out.println(str.substring(str.length()-1, str.length()));
         System.out.println(str.substring(5));

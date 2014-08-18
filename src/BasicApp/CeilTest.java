@@ -22,7 +22,10 @@ public class CeilTest {
         System.out.println(Math.ceil(num));
         
         //Math.round：四舍五入
-        System.out.println(Math.round(num));
+        System.out.println(Math.round(11.2));//11
+        System.out.println(Math.round(11.5));//12
+        System.out.println(Math.round(-11.5));//-11
+        System.out.println(Math.round(-11.6));//-12
     } 
     //按10取整
     public static void quzheng(){
