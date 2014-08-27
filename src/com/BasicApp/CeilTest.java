@@ -3,13 +3,8 @@ package com.BasicApp;
 public class CeilTest {
 
     public static void main(String[] args) {
-//        ceil();
-//        quzheng();
-        
-        int i=0;
-        i=i++;
-        System.out.println(i);
-        
+        ceil();
+        quzheng();
     }
     //取整 ceil
     public static void ceil(){
@@ -30,7 +25,6 @@ public class CeilTest {
     //按10取整
     public static void quzheng(){
         int i=233;
-        
         System.out.println(Math.round(i/10.0)*10);
     }
 }

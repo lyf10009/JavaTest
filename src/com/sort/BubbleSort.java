@@ -17,6 +17,7 @@ public class BubbleSort {
                     num[j]=tmp;
                 }
             }
+            System.out.println("≈≈–Ú∫Û£∫"+Arrays.toString(num));
         }
         System.out.println("≈≈–Ú∫Û£∫"+Arrays.toString(num));
     }
@@ -31,6 +32,7 @@ public class BubbleSort {
                     num[j+1]=tmp;
                 }
             }
+            System.out.println("≈≈–Ú∫Û£∫"+Arrays.toString(num));
         }
         System.out.println("≈≈–Ú∫Û£∫"+Arrays.toString(num));
     }
@@ -48,6 +50,7 @@ public class BubbleSort {
                     flag = true;
                 }
             }
+            System.out.println("≈≈–Ú∫Û£∫"+Arrays.toString(num));
         }
         System.out.println("≈≈–Ú∫Û£∫"+Arrays.toString(num));
     }
@@ -55,9 +58,10 @@ public class BubbleSort {
     
     public static void main(String[] args) {
         int[] num={9,1,5,8,3,7,4,6,2};
+        System.out.println("‘≠–Ú¡–£∫"+Arrays.toString(num));
 //        bubbleSort0(num);
-//        bubbleSort1(num);
-        bubbleSort2(num);
+        bubbleSort1(num);
+//        bubbleSort2(num);
     }
 
 }

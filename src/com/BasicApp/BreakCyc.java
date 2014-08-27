@@ -18,5 +18,6 @@ public class BreakCyc {
 			}
 			System.out.println();
 		}
+		System.out.println("½áÊø");
 	}
 }

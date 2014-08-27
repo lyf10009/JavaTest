@@ -1,7 +1,6 @@
 package com.jdbc;
 
 import java.sql.*;
-import java.util.*;
 
 public class Dbconn {
     final static String driver = "com.mysql.jdbc.Driver";
