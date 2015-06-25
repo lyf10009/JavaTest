@@ -14,15 +14,15 @@ public class InsertSort {
         insertSort(num);
     }
     public static void insertSort(int[] num){
-        int j;
-        for(int i=1;i<num.length;i++){
-            if(num[i]<num[i-1]){
-                int tmp=num[i];
-                for(j=i-1;j>=0 && num[j]>tmp;j--){
-                    num[j+1]=num[j];
+        for(int i=0,j=i;i<num.length-1;j=++i){
+        	int tmp = num[i + 1];
+            while (tmp < num[j]) {
+            	num[j + 1] = num[j];
+                if (j-- == 0) {
+                    break;
                 }
-                num[j+1]=tmp;
             }
+            num[j + 1] = tmp;
         }
         System.out.println("ÅÅÐòºó£º"+Arrays.toString(num));
     }

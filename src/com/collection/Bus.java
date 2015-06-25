@@ -45,4 +45,7 @@ public class Bus {
         super();
     }
     
+    public String toString(){
+    	return bus1+"->"+bus2+"->"+bus3;
+    }
 }

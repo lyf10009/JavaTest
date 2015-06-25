@@ -33,7 +33,35 @@ public class CollectionTest {
 //        listToSet();
 //        nullTest();
 //        queueTest();
-        setTest();
+//        setTest();
+//    	removeTest();
+    }
+    
+    public static void removeTest(){
+    	List<String> tmp = new ArrayList<String>();
+//    	tmp.add("bus1");
+    	tmp.add("bus2");
+//    	tmp.add("bus3");
+    	tmp.add("bus4");
+//    	tmp.add("bus5");
+        List<Bus> list = new ArrayList<Bus>();
+        Bus one1 = new Bus("bus1", "bus2", 1);
+        Bus one2 = new Bus("bus2", "bus2", 2);
+        Bus one3 = new Bus("bus3", "bus2", 3);
+        Bus one4 = new Bus("bus4", "bus2", 4);
+        Bus one5 = new Bus("bus5", "bus2", 5);
+        list.add(one1);
+        list.add(one2);
+        list.add(one3);
+        list.add(one4);
+        list.add(one5);
+    	for(int i=0;i<list.size();i++){
+    		if(tmp.contains(list.get(i).getBus1())){
+    			list.remove(i);
+    			i--;
+    		}
+    	}
+    	System.out.println(list);
     }
  
     public static void setTest() {
@@ -352,7 +380,7 @@ public class CollectionTest {
         list.add("星期2");
         list.add("星期3");
         list.add("星期4");
-        List<String> list1 = new ArrayList<String>();
+        List<String> list1 = new ArrayList<String>();//如果list1=null,则报错
         list1.add("星期1");
         list1.add("星期3");
         list1.add("星期4");
@@ -362,25 +390,26 @@ public class CollectionTest {
         for (String day : list) {
             System.out.print(day + "\t");
         }
-        System.out.println();
+        System.out.println("结束");
     }
 
     public static void retainAllTest() {
         List<String> list = new ArrayList<String>();
         list.add("星期1");
-        list.add("星期2");
-        list.add("星期3");
-        list.add("星期4");
+//        list.add("星期2");
+//        list.add("星期3");
+//        list.add("星期4");
         List<String> list1 = new ArrayList<String>();
         list1.add("星期1");
-        list1.add("星期3");
-        list1.add("星期4");
-        list1.add("星期5");
+//        list1.add("星期3");
+//        list1.add("星期4");
+//        list1.add("星期5");
         list.retainAll(list1);
         System.out.println("list与list1的共同元素:");
         for (String day : list) {
             System.out.print(day + "\t");
         }
-        System.out.println();
+        System.out.println("");
+        System.out.println("结束");
     }
 }

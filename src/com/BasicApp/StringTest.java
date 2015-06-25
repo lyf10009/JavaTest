@@ -8,13 +8,15 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.bean.TreeNode;
+
 public class StringTest {
 
     public static void main(String[] args) throws ParseException {
 //        judgeChinese();//ÅÐ¶Ïºº×Ö¸öÊý
 //        removeStr();
 //        timeFormatByString();
-        substringTest();
+//        substringTest();
 //        compareToTest();
 //        replaceString();
 //        match();
@@ -22,7 +24,7 @@ public class StringTest {
 //        charTest();
 //        stringBuildTest();
 //        indexOf();
-        equals();
+//        equals();
     }
     public static void indexOf(){
         String string = "2014-08-01";
