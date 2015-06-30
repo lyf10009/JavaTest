@@ -30,11 +30,29 @@ public class ChangeValue {
     	System.out.println("调用reset方法前array中的第0个元素的值是:" + array[0]);
     	reset(array);
     	System.out.println("调用reset方法后array中的第0个元素的值是:" + array[0]);
+
+    	//不变
+    	String string = new String("huixin");
+    	System.out.println("调用reset方法前string的值是:" + string);
+    	reset(string);
+    	System.out.println("调用reset方法后string的值是:" + string);
+
+    	//不变
+    	Integer num = new Integer(10);
+    	System.out.println("调用reset方法前num的值是:" + num);
+    	reset(num);
+    	System.out.println("调用reset方法后num的值是:" + num);
     	 
 	}
 
 	public static void reset(String[] param) {
 		param[0] = "hello, world!";
+	}
+	public static void reset(String param) {
+		param += "hello, world!";
+	}
+	public static void reset(Integer param) {
+		param += 1;
 	}
     
     public static void addOne(Bus one,String str,StringBuilder sBuilder,Integer index){
