@@ -1,8 +1,12 @@
 package com.collection;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -13,10 +17,81 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.BasicApp.StringUtil;
+
 import net.sf.json.JSONArray;
 
+class Loss{
+	private Long id;
+	private Date createTime;
+	private Date updateTime;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Date getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
+	}
+}
+
 public class CollectionTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
+		DateFormat dfAll = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String str1 = "2013-4-01 17:30:42.0";
+		String str11 = "2013-4-01 17:30:43.0";
+		String str111 = "2013-4-01 18:30:43.0";
+		Date time1 = dfAll.parse(str1);
+		Date time2 = dfAll.parse(str11);
+		Date time3 = dfAll.parse(str111);
+		
+    	List<Loss> list = new ArrayList<Loss>();
+    	
+    	Loss loss1 = new Loss();
+    	loss1.setId(1L);
+    	loss1.setCreateTime(time2);
+    	Loss loss2 = new Loss();
+    	loss2.setId(2L);
+    	loss2.setCreateTime(time1);
+    	loss2.setUpdateTime(time3);
+    	Loss loss3 = new Loss();
+    	loss3.setId(3L);
+    	loss3.setCreateTime(new Date());
+    	list.add(loss1);
+    	list.add(loss2);
+    	list.add(loss3);
+    	for(Loss loss:list){
+    		System.out.println(loss.getId());
+    	}
+    	System.out.println("----------------------------------");
+        Collections.sort(list, new Comparator<Loss>() {
+            @Override
+            public int compare(Loss loss1, Loss loss2) {
+                Date lossTime1 = StringUtil.isNullOrEmpty(loss1.getUpdateTime())?loss1.getCreateTime():loss1.getUpdateTime();                 
+                Date lossTime2 = StringUtil.isNullOrEmpty(loss2.getUpdateTime())?loss2.getCreateTime():loss2.getUpdateTime();                 
+                if(lossTime1.getTime()>lossTime2.getTime()){
+                    return -1;
+                }else{
+                    return 1;
+                }
+            }
+        });
+    	for(Loss loss:list){
+    		System.out.println(loss.getId());
+    	}
+    	
+    	Date time = new Date(1421210081424L);
+    	System.out.println(time);
 //        iteratorTest();
 //        clearList();
 //        changeEntity();
